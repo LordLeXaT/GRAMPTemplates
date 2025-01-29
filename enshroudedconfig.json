@@ -89,62 +89,50 @@
         "EnumValues": {}
     },
     {
-    "DisplayName": "Enable Voice Chat",
-    "Category": "Enshrouded:communication",
-    "Subcategory": "Server:voice:1",
-    "Description": "If set, voice chat will be enabled",
-    "Keywords": "voice,chat,enable,enableVoiceChat",
-    "FieldName": "enableVoiceChat",
-    "InputType": "checkbox",
-    "ParamFieldName": "$.enableVoiceChat",
-    "DefaultValue": "false",
-    "EnumValues": {
-        "False": "false",
-        "True": "true"
-    }
-},
+        "DisplayName": "Enable Voice Chat",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If set, voice chat will be enabled",
+        "Keywords": "voice,chat,enable,enableVoiceChat",
+        "FieldName": "enableVoiceChat",
+        "InputType": "checkbox",
+        "ParamFieldName": "$.enableVoiceChat",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
     {
-    "DisplayName": "Voice Chat Mode",
-    "Category": "Enshrouded:communication",
-    "Subcategory": "Server:voice:1",
-    "Description": "Sets the mode for voice chat. Requires Voice Chat to be enabled",
-    "Keywords": "voice,chat,mode,voiceChatMode",
-    "FieldName": "voiceChatMode",
-    "InputType": "enum",
-    "ParamFieldName": "$.voiceChatMode",
-    "DefaultValue": "Proximity",
-    "EnumValues": {
-        "Proximity": "Proximity (default)",
-        "Global": "Global"
-    }
-},
-{
-    "DisplayName": "Enable Text Chat",
-    "Category": "Enshrouded:communication",
-    "Subcategory": "Server:text:1",
-    "Description": "If set, text chat will be enabled",
-    "Keywords": "text,chat,enable,enableTextChat",
-    "FieldName": "enableTextChat",
-    "InputType": "checkbox",
-    "ParamFieldName": "$.enableTextChat",
-    "DefaultValue": "false",
-    "EnumValues": {
-        "False": "false",
-        "True": "true"
-    }
-},
-{
-    "DisplayName": "User Groups",
-    "Category": "Enshrouded:server",
-    "Subcategory": "Server:users:1",
-    "Description": "Defines user groups with specific permissions",
-    "Keywords": "user,groups,permissions",
-    "FieldName": "userGroups",
-    "InputType": "list",
-    "ParamFieldName": "$.userGroups",
-    "DefaultValue": "[]",
-    "EnumValues": {}
-}
+        "DisplayName": "Voice Chat Mode",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the mode for voice chat. Requires Voice Chat to be enabled",
+        "Keywords": "voice,chat,mode,voiceChatMode",
+        "FieldName": "voiceChatMode",
+        "InputType": "enum",
+        "ParamFieldName": "$.voiceChatMode",
+        "DefaultValue": "Proximity",
+        "EnumValues": {
+            "Proximity": "Proximity (default)",
+            "Global": "Global"
+        }
+    },
+    {
+        "DisplayName": "Enable Text Chat",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If set, text chat will be enabled",
+        "Keywords": "text,chat,enable,enableTextChat",
+        "FieldName": "enableTextChat",
+        "InputType": "checkbox",
+        "ParamFieldName": "$.enableTextChat",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
     {
         "DisplayName": "Game Settings Preset",
         "Category": "Enshrouded:stadia_controller",
@@ -209,20 +197,20 @@
         "EnumValues": {}
     },
     {
-    "DisplayName": "Player Body Heat Factor",
-    "Category": "Enshrouded:gameplay",
-    "Subcategory": "Gameplay:joystick:2",
-    "Description": "Scales the maximum body heat for players by the set factor. The higher the factor the longer the player can stay in very cold areas before hypothermia sets in",
-    "Keywords": "player,body,heat,factor,playerBodyHeatFactor",
-    "FieldName": "playerBodyHeatFactor",
-    "InputType": "number",
+        "DisplayName": "Player Body Heat Factor",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Gameplay:joystick:2",
+        "Description": "Scales the maximum body heat for players by the set factor. The higher the factor the longer the player can stay in very cold areas before hypothermia sets in",
+        "Keywords": "player,body,heat,factor,playerBodyHeatFactor",
+        "FieldName": "playerBodyHeatFactor",
+        "InputType": "number",
         "MinValue": 0.5,
         "MaxValue": 2,
-    "ParamFieldName": "$.gameSettings.playerBodyHeatFactor",
-    "DefaultValue": "1",
+        "ParamFieldName": "$.gameSettings.playerBodyHeatFactor",
+        "DefaultValue": "1",
         "Placeholder": "1",
-    "EnumValues": {}
-},
+        "EnumValues": {}
+    },
     {
         "DisplayName": "Enable Weapon Durability",
         "Category": "Enshrouded:stadia_controller",
@@ -311,37 +299,37 @@
         }
     },
     {
-    "DisplayName": "Air Turbulences Affect Glider",
-    "Category": "Enshrouded:gameplay",
-    "Subcategory": "Gameplay:joystick:2",
-    "Description": "If set, the glider will be affected by air turbulences",
-    "Keywords": "glider,turbulences,enable,enableGliderTurbulences",
-    "FieldName": "enableGliderTurbulences",
-    "InputType": "checkbox",
-    "ParamFieldName": "$.gameSettings.enableGliderTurbulences",
-    "DefaultValue": "true",
-    "EnumValues": {
-        "False": "false",
-        "True": "true"
-    }
-},
-{
-    "DisplayName": "Weather Frequency",
-    "Category": "Enshrouded:gameplay",
-    "Subcategory": "Gameplay:joystick:2",
-    "Description": "Sets how often new weather phenomena appear in the game world",
-    "Keywords": "weather,frequency,weatherFrequency",
-    "FieldName": "weatherFrequency",
-    "InputType": "enum",
-    "ParamFieldName": "$.gameSettings.weatherFrequency",
-    "DefaultValue": "Normal",
-    "EnumValues": {
-        "Disabled": "Disabled",
-        "Rare": "Rare",
-        "Normal": "Normal",
-        "Often": "Often"
-    }
-},
+        "DisplayName": "Air Turbulences Affect Glider",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Gameplay:joystick:2",
+        "Description": "If set, the glider will be affected by air turbulences",
+        "Keywords": "glider,turbulences,enable,enableGliderTurbulences",
+        "FieldName": "enableGliderTurbulences",
+        "InputType": "checkbox",
+        "ParamFieldName": "$.gameSettings.enableGliderTurbulences",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Weather Frequency",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Gameplay:joystick:2",
+        "Description": "Sets how often new weather phenomena appear in the game world",
+        "Keywords": "weather,frequency,weatherFrequency",
+        "FieldName": "weatherFrequency",
+        "InputType": "enum",
+        "ParamFieldName": "$.gameSettings.weatherFrequency",
+        "DefaultValue": "Normal",
+        "EnumValues": {
+            "Disabled": "Disabled",
+            "Rare": "Rare",
+            "Normal": "Normal",
+            "Often": "Often"
+        }
+    },
     {
         "DisplayName": "Mining Effectiveness",
         "Category": "Enshrouded:stadia_controller",
@@ -632,21 +620,21 @@
         }
     },
     {
-    "DisplayName": "Taming Failure Repercussions",
-    "Category": "Enshrouded:gameplay",
-    "Subcategory": "Gameplay:joystick:2",
-    "Description": "Sets how the game reacts when a player startles wildlife during taming. Progress is visualized by hearts in the game",
-    "Keywords": "taming,startle,repercussion,tamingStartleRepercussion",
-    "FieldName": "tamingStartleRepercussion",
-    "InputType": "enum",
-    "ParamFieldName": "$.gameSettings.tamingStartleRepercussion",
-    "DefaultValue": "LoseSomeProgress",
-    "EnumValues": {
-        "KeepAllProgress": "Keep all progress",
-        "LoseSomeProgress": "Lose some progress (default)",
-        "LoseAllProgress": "Lose all progress"
-    }
-},
+        "DisplayName": "Taming Failure Repercussions",
+        "Category": "Enshrouded:stadia_controller",
+        "Subcategory": "Gameplay:joystick:2",
+        "Description": "Sets how the game reacts when a player startles wildlife during taming. Progress is visualized by hearts in the game",
+        "Keywords": "taming,startle,repercussion,tamingStartleRepercussion",
+        "FieldName": "tamingStartleRepercussion",
+        "InputType": "enum",
+        "ParamFieldName": "$.gameSettings.tamingStartleRepercussion",
+        "DefaultValue": "LoseSomeProgress",
+        "EnumValues": {
+            "KeepAllProgress": "Keep all progress",
+            "LoseSomeProgress": "Lose some progress (default)",
+            "LoseAllProgress": "Lose all progress"
+        }
+    },
     {
         "DisplayName": "Daytime Length",
         "Category": "Enshrouded:stadia_controller",
