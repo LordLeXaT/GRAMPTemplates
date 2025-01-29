@@ -310,10 +310,10 @@
         }
     },
     {
-    "DisplayName": "Enable Glider Turbulences",
+    "DisplayName": "Air Turbulences Affect Glider",
     "Category": "Enshrouded:gameplay",
     "Subcategory": "Gameplay:joystick:2",
-    "Description": "If set, glider turbulences will be enabled",
+    "Description": "If set, the glider will be affected by air turbulences",
     "Keywords": "glider,turbulences,enable,enableGliderTurbulences",
     "FieldName": "enableGliderTurbulences",
     "InputType": "checkbox",
@@ -328,16 +328,17 @@
     "DisplayName": "Weather Frequency",
     "Category": "Enshrouded:gameplay",
     "Subcategory": "Gameplay:joystick:2",
-    "Description": "Sets the frequency of weather changes",
+    "Description": "Sets how often new weather phenomena appear in the game world",
     "Keywords": "weather,frequency,weatherFrequency",
     "FieldName": "weatherFrequency",
     "InputType": "enum",
     "ParamFieldName": "$.gameSettings.weatherFrequency",
     "DefaultValue": "Normal",
     "EnumValues": {
-        "Low": "Low",
+        "Disabled": "Disabled",
+        "Rare": "Rare",
         "Normal": "Normal",
-        "High": "High"
+        "Often": "Often"
     }
 },
     {
@@ -630,19 +631,19 @@
         }
     },
     {
-    "DisplayName": "Taming Startle Repercussion",
+    "DisplayName": "Taming Failure Repercussions",
     "Category": "Enshrouded:gameplay",
     "Subcategory": "Gameplay:joystick:2",
-    "Description": "Sets the repercussion when taming is startled",
+    "Description": "Sets how the game reacts when a player startles wildlife during taming. Progress is visualized by hearts in the game",
     "Keywords": "taming,startle,repercussion,tamingStartleRepercussion",
     "FieldName": "tamingStartleRepercussion",
     "InputType": "enum",
     "ParamFieldName": "$.gameSettings.tamingStartleRepercussion",
     "DefaultValue": "LoseSomeProgress",
     "EnumValues": {
-        "LoseAllProgress": "Lose All Progress",
-        "LoseSomeProgress": "Lose Some Progress (default)",
-        "NoRepercussion": "No Repercussion"
+        "KeepAllProgress": "Keep all progress",
+        "LoseSomeProgress": "Lose some progress (default)",
+        "LoseAllProgress": "Lose all progress"
     }
 },
     {
