@@ -28,6 +28,20 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Server Description",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the description of the server. This is displayed to users in the client server browser. Maximum 255 characters",
+        "Keywords": "description,server",
+        "FieldName": "description",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "description",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Server Password",
         "Category": "DayZ:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -574,7 +588,7 @@
         "DisplayName": "Enable Darker Nights",
         "Category": "DayZ:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
-        "Description": "Use 1 for darker nights on vanilla maps. Modded maps maybe use different values",
+        "Description": "Use 1 for darker nights on vanilla maps, 2 for Sakhal-specific lighting. Modded maps maybe use different values",
         "Keywords": "light,lighting,dark,night,lightingconfig",
         "FieldName": "lightingConfig",
         "InputType": "number",
@@ -920,6 +934,133 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Network Object Batch Log Slow",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Sets the maximum time a bubble can take to iterate before it is logged to the console",
+        "Keywords": "network,object,batch,log,slow,networkObjectBatchLogSlow",
+        "FieldName": "networkObjectBatchLogSlow",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchLogSlow",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "5",
+        "Placeholder": "5",
+        "Suffix": "seconds",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Network Object Batch Enforce Bandwidth Limits",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "If enabled, sets a limiter for object creation based on bandwidth statistics",
+        "Keywords": "network,object,batch,enforce,bandwidth,limits,networkObjectBatchEnforceBandwidthLimits",
+        "FieldName": "networkObjectBatchEnforceBandwidthLimits",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchEnforceBandwidthLimits",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Enable Estimated Connection Bandwidth",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Sets the method behind finding the bandwidth usage of a connection. If disabled, it will use the total of the actual data sent since the last server frame. If enabled, it will use a crude estimation",
+        "Keywords": "network,object,batch,use,estimated,bandwidth,networkObjectBatchUseEstimatedBandwidth",
+        "FieldName": "networkObjectBatchUseEstimatedBandwidth",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchUseEstimatedBandwidth",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Use Dynamic Maximum Bandwidth",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Determines if the bandwidth limit should be a factor of the maximum bandwidth that can be sent or a hard limit. The maximum bandwidth that can be sent fluctuates depending on demand in the system.",
+        "Keywords": "network,object,batch,use,dynamic,maximum,bandwidth,networkObjectBatchUseDynamicMaximumBandwidth",
+        "FieldName": "networkObjectBatchUseDynamicMaximumBandwidth",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchUseDynamicMaximumBandwidth",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Bandwidth Limit",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "The actual limit, could be a [0,1] value or a [1,inf] value depending on networkObjectBatchUseDynamicMaximumBandwidth",
+        "Keywords": "network,object,batch,bandwidth,limit,networkObjectBatchBandwidthLimit",
+        "FieldName": "networkObjectBatchBandwidthLimit",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchBandwidthLimit",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "0.8",
+        "Placeholder": "0.8",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Network Object Batch Compute",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Number of objects in the create/destroy lists that are checked in a single server frame.",
+        "Keywords": "network,object,batch,compute,networkObjectBatchCompute",
+        "FieldName": "networkObjectBatchCompute",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchCompute",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "1000",
+        "Placeholder": "1000",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Network Object Batch Send Create",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Maximum number of objects that can be sent for creation.",
+        "Keywords": "network,object,batch,send,create,networkObjectBatchSendCreate",
+        "FieldName": "networkObjectBatchSendCreate",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchSendCreate",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "10",
+        "Placeholder": "10",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Network Object Batch Send Delete",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "Maximum number of objects that can be sent for deletion.",
+        "Keywords": "network,object,batch,send,delete,networkObjectBatchSendDelete",
+        "FieldName": "networkObjectBatchSendDelete",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "networkObjectBatchSendDelete",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "10",
+        "Placeholder": "10",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Log Time Stamp Format",
         "Category": "DayZ:stadia_controller",
         "Subcategory": "Miscellaneous:tune:3",
@@ -1069,6 +1210,23 @@
         "DefaultValue": "4096",
         "Placeholder": "4096",
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Enable Shot Validation",
+        "Category": "DayZ:stadia_controller",
+        "Subcategory": "Miscellaneous:tune:3",
+        "Description": "If set, player shot validation will be enabled",
+        "Keywords": "shot,validation,shotvalidation",
+        "FieldName": "shotValidation",
+        "InputType": "checkbox",
+        "IsFlagArgument": false,
+        "ParamFieldName": "shotValidation",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
     },
     {
         "DisplayName": "Enable Named Mod Directory Links",
