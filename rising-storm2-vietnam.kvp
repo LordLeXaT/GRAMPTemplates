@@ -11,10 +11,10 @@ Meta.ConfigManifest=rising-storm2-vietnamconfig.json
 Meta.MetaConfigManifest=rising-storm2-vietnammetaconfig.json
 Meta.ConfigRoot=rising-storm2-vietnam.kvp
 Meta.MinAMPVersion=2.5.0.4
-Meta.SpecificDockerImage=cubecoders/ampbase:wine8
+Meta.SpecificDockerImage=cubecoders/ampbase:wine-stable
 Meta.DockerRequired=False
 Meta.ContainerPolicy=SupportedOnWindows, RecommendedOnLinux
-Meta.ContainerPolicyReason=The server requires Wine 8 and Xvfb to run on Linux. Using a container avoids the need to install these dependencies on the host.
+Meta.ContainerPolicyReason=The server requires Wine (ideally latest stable from winehq.org) and Xvfb to run on Linux. Using a container avoids the need for you to install these dependencies on the host.
 Meta.ExtraSetupStepsURI=
 Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
@@ -37,7 +37,7 @@ App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} {{ServerMap}}?AdminName={{AdminName}}?AdminPassword={{AdminPassword}}?MaxPlayers={{$MaxUsers}}?Difficulty={{Difficulty}}?{{$FormattedArgs}}{{CustomServerOptions}} -Port={{$GamePort}} -QueryPort={{$QueryPort}} -WebAdminPort={{$WebAdminPort}} -MultiHome={{$ApplicationIPBinding}} {{CustomServerSwitches}} -stdout -FullStdOutLogOutput
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"SteamAppId":"418460","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all"}
+App.EnvironmentVariables={"SteamAppId":"418460","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all","XDG_RUNTIME_DIR":"/tmp"}
 App.CommandLineParameterFormat={0}={1}
 App.CommandLineParameterDelimiter=?
 App.ExitMethod=OS_CLOSE

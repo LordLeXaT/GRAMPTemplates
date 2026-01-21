@@ -13,7 +13,7 @@
         "UpdateStageName": "Base Config Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/CubeCoders/AMPTemplates/raw/main/empyriondedicated.yaml",
+        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/empyriondedicated.yaml",
         "UpdateSourceTarget": "./530870/",
         "SkipOnFailure": false
     },
@@ -21,7 +21,7 @@
         "UpdateStageName": "Backup Exclusions Download 1",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://github.com/CubeCoders/AMPTemplates/raw/main/exclusions/.backupExclusionsEmpyrion1",
+        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/exclusions/.backupExclusionsEmpyrion1",
         "UpdateSourceArgs": ".backupExclude",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "backupExclude",
@@ -33,7 +33,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullRootDir}}.wine\\\" >/dev/null 2>&1; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all /usr/bin/wineboot --init\"",
+        "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullRootDir}}.wine\\\" >/dev/null 2>&1; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all XDG_RUNTIME_DIR=/tmp /usr/bin/wineboot --init\"",
         "SkipOnFailure": false
     }
 ]

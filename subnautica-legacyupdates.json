@@ -1,15 +1,5 @@
 [
     {
-        "UpdateStageName": "Subnautica Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "264710",
-        "UpdateSourceArgs": "264710",
-        "ForceDownloadPlatform": "Windows",
-        "UpdateSourceVersion": "legacy",
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Nitrox Directory Creation",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateDirectory",
@@ -19,8 +9,8 @@
     {
         "UpdateStageName": "Nitrox Download",
         "UpdateSourcePlatform": "All",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceArgs": "SubnauticaNitrox/Nitrox",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/SubnauticaNitrox/Nitrox/releases/download/1.7.1.0/Nitrox_1.7.1.0.zip",
         "UpdateSourceTarget": "{{$FullBaseDir}}nitrox",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,

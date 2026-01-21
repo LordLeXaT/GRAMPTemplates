@@ -17,6 +17,8 @@
             "Extinction_WP": "Extinction",
             "Astraeos_WP": "Astraeos",
             "Ragnarok_WP": "Ragnarok",
+            "Valguero_WP": "Valguero",
+            "LostColony_WP": "Lost Colony",
             "{{CustomMap}}": "--Custom--"
         }
     },
@@ -191,17 +193,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "MultiHome IP Binding",
-        "Category": "ARK SA:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If required, you can change the binding of the server and RCON by changing the Application IP Binding for this instance. NOTE: The IP must be reachable by AMP, otherwise AMP's console won't work",
-        "Keywords": "ip,binding,address,multihome",
-        "FieldName": "MultiHome",
-        "InputType": "hidden",
-        "ParamFieldName": "MultiHome",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Disable BattlEye",
         "Category": "ARK SA:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -343,6 +334,33 @@
         }
     },
     {
+        "DisplayName": "Public IP Selection Mode",
+        "Category": "ARK SA:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets whether ARK should automatically select the public IP advertised for the server, or whether it should use the IP set under Server Public IP",
+        "Keywords": "public,ip,ServerIP",
+        "FieldName": "ServerIP",
+        "InputType": "enum",
+        "ParamFieldName": "ServerIP",
+        "DefaultValue": "",
+        "EnumValues": {
+            "": "Automatic (default)",
+            "-ServerIP={{ManualServerIP}} ": "Manual"
+        }
+    },
+    {
+        "DisplayName": "Server Public IP",
+        "Category": "ARK SA:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the public IP advertised for the server, if \"Manual\" is selected as the Public IP Selection Mode. Useful if the host network has multiple public IPs, or the server is behind a public proxy",
+        "Keywords": "manual,public,ip,serverip",
+        "FieldName": "ManualServerIP",
+        "InputType": "text",
+        "ParamFieldName": "ManualServerIP",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Custom Command Line Flags",
         "Category": "ARK SA:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -444,10 +462,25 @@
         }
     },
     {
+        "DisplayName": "Enable Cluster",
+        "Category": "ARK SA:stadia_controller",
+        "Subcategory": "Clusters:share:3",
+        "Description": "If set, the use of a server cluster will be enabled. Requires Cluster Directory Override and Cluster ID to be set",
+        "Keywords": "cluster,enable",
+        "FieldName": "EnableCluster",
+        "InputType": "checkbox",
+        "ParamFieldName": "EnableCluster",
+        "DefaultValue": "-ClusterDirOverride=\"{{ClusterDirOverride}}\" -clusterID={{clusterID}} ",
+        "EnumValues": {
+            "False": "",
+            "True": "-ClusterDirOverride=\"{{ClusterDirOverride}}\" -clusterID={{clusterID}} "
+        }
+    },
+    {
         "DisplayName": "Cluster Directory Override",
         "Category": "ARK SA:stadia_controller",
         "Subcategory": "Clusters:share:3",
-        "Description": "Sets the path to a shared cluster directory for a server cluster. The cluster directory must be accessible to all cluster servers. If the server is in Docker, the directory must be mounted in the container",
+        "Description": "Sets the path to a shared cluster directory for a server cluster. The cluster directory must be accessible to all cluster servers. If the server is in Docker, the directory must be mounted in the container. Requires Enable Cluster to be set",
         "Keywords": "cluster,directory,override,clusterdiroverride",
         "FieldName": "ClusterDirOverride",
         "InputType": "text",
@@ -459,7 +492,7 @@
         "DisplayName": "Cluster ID",
         "Category": "ARK SA:stadia_controller",
         "Subcategory": "Clusters:share:3",
-        "Description": "Sets the cluster ID for a server cluster. The cluster ID must be the same on all servers in the cluster",
+        "Description": "Sets the cluster ID for a server cluster. The cluster ID must be the same on all servers in the cluster. Requires Enable Cluster to be set",
         "Keywords": "cluster,id,clusterid",
         "FieldName": "clusterID",
         "InputType": "text",

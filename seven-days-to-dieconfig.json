@@ -441,7 +441,7 @@
         "DisplayName": "Crossplay Enabled",
         "Category": "7 Days to Die:skull",
         "Subcategory": "Server:dns",
-        "Description": "Enables/Disables crossplay. Server Max Player Count must be no more than 8, EAC must be enabled, and Ignore EOS Sanctions must be disabled. Only applies to server version 2.0 and above.",
+        "Description": "Enables/Disables crossplay. Server Max Player Count must be no more than 8, EAC must be enabled, and Ignore EOS Sanctions must be disabled. See [crossplay requirements](https://7daystodie.com/crossplay-server-requirements/). Only applies to server version 2.0 and above.",
         "Keywords": "crossplay,Enabled,ServerAllowCrossplay",
         "FieldName": "ServerAllowCrossplay",
         "InputType": "checkbox",
@@ -602,7 +602,7 @@
         "DisplayName": "Game Name",
         "Category": "7 Days to Die:skull",
         "Subcategory": "Gameplay:joystick",
-        "Description": "Whatever you want the game name to be (letters, numbers, spaces, underscores, dashes and periods only). This affects the save game name as well as the seed used when placing decoration (trees etc) in the world. It does not control the generic layout of the world if creating an RWG world.`",
+        "Description": "Whatever you want the game name to be (letters, numbers, spaces, underscores, dashes and periods only). This affects the save game name as well as the seed used when placing decoration (trees etc) in the world. It does not control the generic layout of the world if creating an RWG world.",
         "Keywords": "Game,Name,GameName",
         "FieldName": "GameName",
         "InputType": "text",
@@ -630,7 +630,7 @@
         "DisplayName": "Game Difficulty",
         "Category": "7 Days to Die:skull",
         "Subcategory": "Gameplay:joystick",
-        "Description": "Whatever you want the name of the server to be.",
+        "Description": "Sets the difficulty level of the game.",
         "Keywords": "Game,Difficulty,GameDifficulty",
         "FieldName": "GameDifficulty",
         "InputType": "enum",
@@ -813,8 +813,8 @@
         "IsFlagArgument": false,
         "ParamFieldName": "/ServerSettings/property[@name='StormFreq']/@value",
         "IncludeInCommandLine": false,
-        "DefaultValue": "100",
-        "Placeholder": "100",
+        "DefaultValue": "0",
+        "Placeholder": "0",
         "EnumValues": {}
     },
     {
@@ -938,6 +938,51 @@
         "EnumValues": {
             "False": "false",
             "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Camera Restriction Mode",
+        "Category": "7 Days to Die:skull",
+        "Subcategory": "Gameplay:joystick",
+        "Description": "Sets whether and how camera views are restricted for players. Only applies to server version 2.5 and above.",
+        "Keywords": "camera,restriction,firstperson,thirdperson,CameraRestrictionMode",
+        "FieldName": "CameraRestrictionMode",
+        "InputType": "enum",
+        "IsFlagArgument": false,
+        "ParamFieldName": "/ServerSettings/property[@name='CameraRestrictionMode']/@value",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "0": "Can freely swap between first and third person views",
+            "1": "Restricted to first person view",
+            "2": "Restricted to third person view"
+        }
+    },
+    {
+        "DisplayName": "Jar Refund Percentage",
+        "Category": "7 Days to Die:skull",
+        "Subcategory": "Gameplay:joystick",
+        "Description": "The empty jar refund percentage after consuming an item. Only applies to server version 2.5 and above.",
+        "Keywords": "jar,refund,percentage,JarRefund",
+        "FieldName": "JarRefund",
+        "InputType": "enum",
+        "IsFlagArgument": false,
+        "ParamFieldName": "/ServerSettings/property[@name='JarRefund']/@value",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "0": "0%",
+            "5": "5%",
+            "10": "10%",
+            "20": "20%",
+            "30": "30%",
+            "40": "40%",
+            "50": "50%",
+            "60": "60%",
+            "70": "70%",
+            "80": "80%",
+            "90": "90%",
+            "100": "100%"
         }
     },
     {
@@ -1139,6 +1184,27 @@
             "2": "Run",
             "3": "Sprint",
             "4": "Nightmare"
+        }
+    },
+    {
+        "DisplayName": "Zombie Smell Movement Speed",
+        "Category": "7 Days to Die:skull",
+        "Subcategory": "Gameplay:joystick",
+        "Description": "Zombie movement speed after detecting a smell. Only applies to server version 2.5 and above.",
+        "Keywords": "ai,smell,zombie,move,speed,AISmellMode",
+        "FieldName": "AISmellMode",
+        "InputType": "enum",
+        "IsFlagArgument": false,
+        "ParamFieldName": "/ServerSettings/property[@name='AISmellMode']/@value",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "3",
+        "EnumValues": {
+            "0": "Off",
+            "1": "Walk",
+            "2": "Jog",
+            "3": "Run (default)",
+            "4": "Sprint",
+            "5": "Nightmare"
         }
     },
     {
@@ -1547,12 +1613,13 @@
         "EnumValues": {
             "public": "Public (default)",
             "latest_experimental": "Experimental",
-            "v2.1": "Version 2.1",
+            "v2.5": "Version 2.5",
+            "v2.4": "Version 2.4",
+            "v2.3": "Version 2.3",
+            "v2.2": "Version 2.2",
             "v2.0": "Version 2.0",
             "v1.4": "Version 1.4",
-            "v1.3": "Version 1.3",
             "alpha21.2": "Alpha 21.2",
-            "alpha21.1": "Alpha 21.1",
             "alpha20.7": "Alpha 20.7",
             "alpha19.6": "Alpha 19.6",
             "alpha18.4": "Alpha 18.4",
